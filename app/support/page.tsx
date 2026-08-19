@@ -82,17 +82,12 @@ export default function SupportPage() {
           Both consumers and businesses can request deletion of their Munch
           account and associated data.
         </p>
-        <div className="mt-4 rounded-2xl border border-dashed border-munch-orange/40 bg-munch-white p-4 text-sm text-munch-muted">
-          <ConfigPlaceholder>[ACCOUNT DELETION STEPS TBC]</ConfigPlaceholder>
-          <p className="mt-2">
-            The exact in-app deletion flow hasn&rsquo;t been confirmed yet.
-            Once available, this section should explain how to delete an
-            account from within the Munch app (e.g. Settings → Delete
-            Account). Until then, account deletion can be requested by
-            emailing{" "}
+        <div className="mt-4 rounded-2xl border border-munch-border bg-munch-white p-4 text-sm text-munch-muted">
+          <p>
+            To delete your account, email{" "}
             {siteConfig.privacyEmail ? (
               <a
-                href={`mailto:${siteConfig.privacyEmail}`}
+                href={`mailto:${siteConfig.privacyEmail}?subject=Account%20deletion%20request`}
                 className="font-semibold text-munch-orange underline underline-offset-2"
               >
                 {siteConfig.privacyEmail}
@@ -100,7 +95,9 @@ export default function SupportPage() {
             ) : (
               <ConfigPlaceholder>[PRIVACY EMAIL]</ConfigPlaceholder>
             )}{" "}
-            from the email address associated with the account.
+            from the address associated with your account and ask us to
+            delete it. We&rsquo;ll confirm once your account and personal
+            data have been removed.
           </p>
         </div>
       </section>
