@@ -84,7 +84,14 @@ export default function SupportPage() {
         </p>
         <div className="mt-4 rounded-2xl border border-munch-border bg-munch-white p-4 text-sm text-munch-muted">
           <p>
-            To delete your account, email{" "}
+            <strong className="text-munch-black">In the app:</strong> go to{" "}
+            <strong className="text-munch-black">
+              Settings → Account → Delete Account
+            </strong>{" "}
+            and follow the prompts.
+          </p>
+          <p className="mt-3">
+            <strong className="text-munch-black">By email:</strong> email{" "}
             {siteConfig.privacyEmail ? (
               <a
                 href={`mailto:${siteConfig.privacyEmail}?subject=Account%20deletion%20request`}
