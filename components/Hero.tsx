@@ -56,8 +56,8 @@ export function Hero() {
             <Image
               src="/app/home-screen.png"
               alt="Munch home screen showing featured deals and popular spots nearby"
-              width={748}
-              height={1442}
+              width={634}
+              height={1303}
               className="h-auto w-full"
               priority
             />
