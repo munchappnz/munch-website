@@ -32,7 +32,7 @@ export const siteConfig = {
 
   /** Support contact addresses. Leave blank if not supplied — the support page shows a placeholder. */
   supportEmail: "admin@munchapp.co.nz",
-  businessEmail: "",
+  businessEmail: "admin@munchapp.co.nz",
   privacyEmail: "admin@munchapp.co.nz",
 
   /** Legal / company information for the Privacy Policy and Terms of Use. */

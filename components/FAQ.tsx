@@ -22,8 +22,7 @@ function buildFaqs() {
     },
     {
       q: "Does Munch cost anything?",
-      // Placeholder: update once the final consumer pricing model is confirmed.
-      a: "[PRICING TBC] This answer will be updated to reflect Munch's consumer pricing once it's finalised.",
+      a: "Munch is completely free for customers. Download the app, discover deals and claim them at no cost.",
     },
     {
       q: "I own a restaurant, café or bar. How do I join?",
