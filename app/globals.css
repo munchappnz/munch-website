@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Munch design tokens.
+   Colours are sampled from the supplied brand assets (icon + wordmark) so
+   they match the real Munch orange/cream exactly. Change values here to
+   re-theme the whole site.
+--------------------------------------------------------------------------- */
+:root {
+  --munch-orange: #fc4101;
+  --munch-orange-dark: #e13a00;
+  --munch-orange-soft: #ffe4d9;
+  --munch-black: #151515;
+  --munch-white: #ffffff;
+  --munch-cream: #fbf8f6;
+  --munch-cream-deep: #f5efea;
+  --munch-muted: #6b675f;
+  --munch-border: #eae5e1;
+
+  --background: var(--munch-cream);
+  --foreground: var(--munch-black);
+}
+
+@theme inline {
+  --color-munch-orange: var(--munch-orange);
+  --color-munch-orange-dark: var(--munch-orange-dark);
+  --color-munch-orange-soft: var(--munch-orange-soft);
+  --color-munch-black: var(--munch-black);
+  --color-munch-white: var(--munch-white);
+  --color-munch-cream: var(--munch-cream);
+  --color-munch-cream-deep: var(--munch-cream-deep);
+  --color-munch-muted: var(--munch-muted);
+  --color-munch-border: var(--munch-border);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-poppins);
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Respect reduced-motion preferences: disable smooth scroll & custom animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Consistent, visible focus ring for keyboard users across the site */
+:focus-visible {
+  outline: 2px solid var(--munch-orange);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content link: hidden until focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--munch-black);
+  color: var(--munch-white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
