@@ -27,11 +27,11 @@ export const siteConfig = {
   businessDeepLink: "",
 
   /** Social links. Leave blank if not supplied — the footer hides icons with no URL. */
-  instagramUrl: "",
+  instagramUrl: "https://www.instagram.com/munchapp_nz/",
   tiktokUrl: "",
 
   /** Support contact addresses. Leave blank if not supplied — the support page shows a placeholder. */
-  supportEmail: "",
+  supportEmail: "admin@munchapp.co.nz",
   businessEmail: "",
   privacyEmail: "",
 
