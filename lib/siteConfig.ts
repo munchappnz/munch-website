@@ -36,7 +36,7 @@ export const siteConfig = {
   privacyEmail: "admin@munchapp.co.nz",
 
   /** Legal / company information for the Privacy Policy and Terms of Use. */
-  legalBusinessName: "",
+  legalBusinessName: "Munch",
   businessAddress: "",
 
   /** Where Munch is currently available. Shown in the FAQ. */

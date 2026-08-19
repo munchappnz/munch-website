@@ -18,6 +18,7 @@ export default function TermsPage() {
   ) : (
     <ConfigPlaceholder>[LEGAL COMPANY NAME]</ConfigPlaceholder>
   );
+  const operatorIsMunch = businessName.trim().toLowerCase() === "munch";
   const addressNode = address ? (
     <>{address}</>
   ) : (
@@ -38,9 +39,9 @@ export default function TermsPage() {
           services (together, the &ldquo;Munch Platform&rdquo;).
         </p>
         <p>
-          The Munch Platform is operated by {businessNameNode}, trading as
-          Munch (&ldquo;Munch&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; or
-          &ldquo;our&rdquo;).
+          The Munch Platform is operated by {businessNameNode}
+          {!operatorIsMunch && <>, trading as Munch</>} (&ldquo;Munch&rdquo;,
+          &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;).
         </p>
         <p>By creating an account or using Munch, you agree to these Terms.</p>
       </LegalSection>
@@ -520,7 +521,8 @@ export default function TermsPage() {
       <LegalSection heading="Contact">
         <p>Questions about these Terms can be sent to:</p>
         <p>
-          {businessNameNode}, trading as Munch
+          {businessNameNode}
+          {!operatorIsMunch && <>, trading as Munch</>}
           <br />
           {addressNode}
           <br />

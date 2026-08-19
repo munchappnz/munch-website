@@ -18,6 +18,7 @@ export default function PrivacyPage() {
   ) : (
     <ConfigPlaceholder>[LEGAL OPERATOR NAME]</ConfigPlaceholder>
   );
+  const operatorIsMunch = businessName.trim().toLowerCase() === "munch";
   const privacyEmailNode = privacyEmail ? (
     <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>
   ) : (
@@ -45,7 +46,8 @@ export default function PrivacyPage() {
       <LegalSection heading="1. Who we are">
         <p>
           Munch is currently an unincorporated New Zealand business operated
-          by {legalOperatorNode} under the trading name Munch.
+          by {legalOperatorNode}
+          {!operatorIsMunch && <> under the trading name Munch</>}.
         </p>
         <p>
           When Munch becomes an incorporated company, this Privacy Policy
