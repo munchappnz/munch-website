@@ -37,7 +37,7 @@ export const siteConfig = {
 
   /** Legal / company information for the Privacy Policy and Terms of Use. */
   legalBusinessName: "Munch",
-  businessAddress: "",
+  businessAddress: "Auckland",
 
   /** Where Munch is currently available. Shown in the FAQ. */
   launchLocation: "Auckland",
