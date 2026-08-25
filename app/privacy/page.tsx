@@ -815,7 +815,9 @@ export default function PrivacyPage() {
         </p>
         <p>An account deletion facility is available through:</p>
         <p>
-          <Link href="/delete-account">munchapp.co.nz/delete-account</Link>
+          <Link href="/support#delete-account">
+            munchapp.co.nz/support#delete-account
+          </Link>
         </p>
         <p>
           Account deletion means deletion of the user&rsquo;s account and
