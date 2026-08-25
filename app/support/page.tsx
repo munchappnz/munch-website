@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 import { ConfigPlaceholder } from "@/components/LegalLayout";
 
@@ -105,6 +106,17 @@ export default function SupportPage() {
             from the address associated with your account and ask us to
             delete it. We&rsquo;ll confirm once your account and personal
             data have been removed.
+          </p>
+          <p className="mt-3">
+            For full details on the deletion process and exactly what data is
+            deleted or retained, see{" "}
+            <Link
+              href="/delete-account"
+              className="font-semibold text-munch-orange underline underline-offset-2"
+            >
+              munchapp.co.nz/delete-account
+            </Link>
+            .
           </p>
         </div>
       </section>
