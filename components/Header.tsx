@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MenuIcon, CloseIcon } from "./icons";
 
-const NAV_LINKS = [
+type NavLink = { label: string; hash: string } | { label: string; href: string };
+
+const NAV_LINKS: NavLink[] = [
   { label: "How it works", hash: "#how-it-works" },
-  { label: "For businesses", hash: "#for-businesses" },
+  { label: "For businesses", href: "/business" },
   { label: "FAQ", hash: "#faq" },
 ];
 
@@ -48,8 +50,8 @@ export function Header() {
         >
           {NAV_LINKS.map((link) => (
             <Link
-              key={link.hash}
-              href={hrefFor(link.hash)}
+              key={link.label}
+              href={"href" in link ? link.href : hrefFor(link.hash)}
               className="text-sm font-medium text-munch-black/80 transition-colors hover:text-munch-orange"
             >
               {link.label}
@@ -95,9 +97,9 @@ export function Header() {
         >
           <ul className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
-              <li key={link.hash}>
+              <li key={link.label}>
                 <Link
-                  href={hrefFor(link.hash)}
+                  href={"href" in link ? link.href : hrefFor(link.hash)}
                   onClick={() => setOpen(false)}
                   className="block rounded-xl px-3 py-3 text-base font-medium text-munch-black hover:bg-munch-white"
                 >

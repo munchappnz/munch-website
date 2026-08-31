@@ -5,7 +5,7 @@ import { InstagramIcon, TikTokIcon } from "./icons";
 
 const FOOTER_LINKS = [
   { label: "How it works", href: "/#how-it-works" },
-  { label: "For businesses", href: "/#for-businesses" },
+  { label: "For businesses", href: "/business" },
   { label: "Download", href: "/#download" },
   { label: "Support", href: "/support" },
   { label: "Privacy", href: "/privacy" },

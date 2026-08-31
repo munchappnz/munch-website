@@ -68,7 +68,7 @@ export function DownloadSection({
         {showBusinessLink && (
           <div className="mt-8">
             <Link
-              href="#for-businesses"
+              href="/business"
               className={`inline-flex items-center gap-1.5 text-sm font-semibold hover:text-munch-orange ${isDark ? "text-white/80" : "text-munch-black"}`}
             >
               Own a restaurant, café or bar? Get your business on Munch

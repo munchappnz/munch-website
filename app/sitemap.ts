@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.siteUrl || "https://munch.example.com";
 
-  const routes = ["/", "/privacy", "/terms", "/support"];
+  const routes = ["/", "/business", "/privacy", "/terms", "/support"];
 
   return routes.map((route) => ({
     url: `${base}${route}`,

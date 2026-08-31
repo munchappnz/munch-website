@@ -31,7 +31,7 @@ export function Hero() {
               Own a restaurant, café or bar?
             </p>
             <Link
-              href="#for-businesses"
+              href="/business"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-munch-black hover:text-munch-orange"
             >
               Get your business on Munch

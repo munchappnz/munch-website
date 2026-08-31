@@ -37,16 +37,16 @@ The site is fully built and functional, but several values are placeholders
 because the real information hasn't been supplied yet. Complete this list
 before going live:
 
-- [ ] Add App Store URL (`siteConfig.appStoreUrl`)
+- [x] Add App Store URL (`siteConfig.appStoreUrl`)
 - [ ] Add Google Play URL (`siteConfig.googlePlayUrl`)
 - [ ] Confirm production domain (`siteConfig.siteUrl`)
-- [ ] Add support email (`siteConfig.supportEmail`)
-- [ ] Add business support email (`siteConfig.businessEmail`)
-- [ ] Add privacy email (`siteConfig.privacyEmail`)
-- [ ] Add legal business name (`siteConfig.legalBusinessName`)
-- [ ] Add legal/business address, if required (`siteConfig.businessAddress`)
-- [ ] Confirm launch location(s) (`siteConfig.launchLocation`, currently "Auckland")
-- [ ] Add Instagram URL, if applicable (`siteConfig.instagramUrl`)
+- [x] Add support email (`siteConfig.supportEmail`)
+- [x] Add business support email (`siteConfig.businessEmail`)
+- [x] Add privacy email (`siteConfig.privacyEmail`)
+- [x] Add legal business name (`siteConfig.legalBusinessName`)
+- [x] Add legal/business address, if required (`siteConfig.businessAddress`)
+- [x] Confirm launch location(s) (`siteConfig.launchLocation`, currently "Auckland")
+- [x] Add Instagram URL, if applicable (`siteConfig.instagramUrl`)
 - [ ] Add TikTok URL, if applicable (`siteConfig.tiktokUrl`)
 - [ ] Confirm the real account-deletion process (`app/support/page.tsx`, "Deleting your account")
 - [ ] **Review the Privacy Policy** (`app/privacy/page.tsx`) with a qualified professional — it's a clearly-marked draft with placeholders (`[EFFECTIVE DATE]`, governing jurisdiction, retention periods, etc.)
@@ -65,14 +65,18 @@ before going live:
 Brand and app screenshot assets supplied by Munch live in:
 
 ```
-public/brand/   munch-wordmark.png, munch-icon.png (+ original .jpg)
-public/app/     home-screen.png, deal-screen.png
+public/brand/               munch-wordmark.png, munch-icon.png (+ original .jpg)
+public/app/                 home-screen.png, deal-screen.png
+public/business-onboarding/ /business page video, poster and the 9 numbered step screenshots
 ```
 
-No business-specific app screenshots were supplied yet — the business
-sections currently reuse the consumer deal-detail screenshot. Swap in a
-dedicated business/dashboard screenshot in `components/BusinessHowItWorks.tsx`
-once one is available; no other changes should be needed.
+The homepage's `BusinessSection`/`BusinessHowItWorks` still reuse the
+consumer deal-detail screenshot — swap in a dedicated business/dashboard
+screenshot in `components/BusinessHowItWorks.tsx` once one is available; no
+other changes should be needed. The dedicated `/business` landing page
+(`app/business/page.tsx`) has its own real onboarding screenshots and video,
+all featuring the fictional example business "Little Fig Kitchen"
+(`lib/littleFig.ts`).
 
 Colour tokens (`app/globals.css`) were sampled directly from the supplied
 logo/icon files, not guessed — update them there if the brand palette
