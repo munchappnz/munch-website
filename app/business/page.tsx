@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { BusinessHero } from "@/components/BusinessHero";
-import { BusinessOnboardingSteps } from "@/components/BusinessOnboardingSteps";
 import { BusinessBenefits } from "@/components/BusinessBenefits";
 import { PendingReviewCallout } from "@/components/PendingReviewCallout";
 import { LiveDealPreview } from "@/components/LiveDealPreview";
@@ -51,7 +50,6 @@ export default function BusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <BusinessHero />
-      <BusinessOnboardingSteps />
       <BusinessBenefits />
       <PendingReviewCallout />
       <LiveDealPreview />

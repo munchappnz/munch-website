@@ -1,12 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import { DownloadMunchButton } from "./DownloadMunchButton";
+import { BusinessOnboardingSteps } from "./BusinessOnboardingSteps";
 import { PlayIcon } from "./icons";
 
 export function BusinessHero() {
   return (
     <section className="relative overflow-hidden bg-munch-cream">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-24 lg:pt-16">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-2 lg:items-start lg:gap-12 lg:pb-24 lg:pt-16">
         {/* Copy */}
         <div className="animate-fade-up text-center lg:text-left">
           <p className="text-sm font-semibold uppercase tracking-wide text-munch-orange">
@@ -41,28 +41,8 @@ export function BusinessHero() {
           </p>
         </div>
 
-        {/* Video preview */}
-        <div className="relative mx-auto w-full max-w-[240px] sm:max-w-[260px] lg:mx-0 lg:max-w-[300px]">
-          <Link
-            href="#setup-video"
-            aria-label="Watch the 60-second Munch Business setup video, starring Little Fig Kitchen"
-            className="group relative block overflow-hidden rounded-[2.25rem] border-4 border-munch-black bg-munch-black shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-4"
-          >
-            <Image
-              src="/business-onboarding/munch-business-onboarding-poster.webp"
-              alt=""
-              width={720}
-              height={1280}
-              className="h-auto w-full"
-              priority
-            />
-            <span className="absolute inset-0 flex items-center justify-center bg-munch-black/15 transition-colors group-hover:bg-munch-black/30">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-munch-white/95 text-munch-orange shadow-lg transition-transform group-hover:scale-105">
-                <PlayIcon className="h-6 w-6 translate-x-0.5" />
-              </span>
-            </span>
-          </Link>
-        </div>
+        {/* Step-by-step guide */}
+        <BusinessOnboardingSteps />
       </div>
     </section>
   );
