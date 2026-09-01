@@ -154,7 +154,7 @@ export function BusinessOnboardingSteps() {
                   : "border-munch-border bg-munch-white"
               }`}
             >
-              <details open className="group">
+              <details className="group">
                 <summary className="flex cursor-pointer list-none items-center gap-4 p-5 marker:content-none sm:p-6">
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-munch-orange text-base font-bold text-munch-white"
