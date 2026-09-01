@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { BusinessHero } from "@/components/BusinessHero";
+import { BusinessOnboardingVideo } from "@/components/BusinessOnboardingVideo";
+import { BusinessOnboardingSteps } from "@/components/BusinessOnboardingSteps";
 import { BusinessBenefits } from "@/components/BusinessBenefits";
 import { PendingReviewCallout } from "@/components/PendingReviewCallout";
 import { LiveDealPreview } from "@/components/LiveDealPreview";
 import { BusinessFAQ, BUSINESS_FAQS } from "@/components/BusinessFAQ";
-import { BusinessOnboardingVideo } from "@/components/BusinessOnboardingVideo";
 import { BusinessFinalCTA } from "@/components/BusinessFinalCTA";
 import { BusinessStickyCta } from "@/components/BusinessStickyCta";
 
@@ -50,11 +51,12 @@ export default function BusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <BusinessHero />
+      <BusinessOnboardingVideo />
+      <BusinessOnboardingSteps />
       <BusinessBenefits />
       <PendingReviewCallout />
       <LiveDealPreview />
       <BusinessFAQ />
-      <BusinessOnboardingVideo />
       <BusinessFinalCTA />
       <BusinessStickyCta />
     </div>

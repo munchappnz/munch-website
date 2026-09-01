@@ -131,117 +131,120 @@ export function BusinessOnboardingSteps() {
   const appStoreAvailable = hasAppStoreLink();
 
   return (
-    <div
-      id="onboarding-steps"
-      className="w-full scroll-mt-20 rounded-3xl border border-munch-border bg-munch-white p-5 shadow-sm sm:p-7"
-    >
-      <h2 className="text-xl font-extrabold text-munch-black sm:text-2xl">
-        Create your first recurring deal
-      </h2>
-      <p className="mt-2 text-sm leading-relaxed text-munch-muted">
-        Follow these steps to set up your business and prepare your first
-        offer. You do not need to wait for approval before creating your
-        deal. Tap a step to open or close it.
-      </p>
+    <section id="onboarding-steps" className="scroll-mt-20 bg-munch-cream">
+      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-3xl font-extrabold text-munch-black sm:text-4xl">
+            Create your first recurring deal
+          </h2>
+          <p className="mt-3 text-lg text-munch-muted">
+            Follow these steps to set up your business and prepare your
+            first offer. You do not need to wait for approval before
+            creating your deal. Tap a step to open or close it.
+          </p>
+        </div>
 
-      <ol className="mt-5 flex flex-col gap-3">
-        {STEPS.map((step) => (
-          <li
-            key={step.number}
-            className={`overflow-hidden rounded-2xl border ${
-              step.highlight
-                ? "border-munch-orange bg-munch-orange-soft/50"
-                : "border-munch-border bg-munch-cream"
-            }`}
-          >
-            <details className="group">
-              <summary className="flex cursor-pointer list-none items-center gap-3 p-4 marker:content-none">
-                <span
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-munch-orange text-sm font-bold text-munch-white"
-                  aria-hidden="true"
-                >
-                  {step.number}
-                </span>
-
-                <h3 className="flex-1 text-sm font-bold text-munch-black sm:text-base">
-                  <span className="sr-only">Step {step.number}: </span>
-                  {step.title}
-                </h3>
-
-                <ChevronDownIcon
-                  className="h-5 w-5 shrink-0 text-munch-muted transition-transform duration-200 group-open:rotate-180"
-                  aria-hidden="true"
-                />
-              </summary>
-
-              <div className="flex flex-col gap-3 px-4 pb-4">
-                {step.highlight && (
-                  <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-munch-orange px-3 py-1 text-xs font-semibold text-munch-white">
-                    <ClockIcon className="h-3.5 w-3.5" />
-                    No waiting required
-                  </span>
-                )}
-
-                <p className="text-sm leading-relaxed text-munch-muted">
-                  {step.description}
-                </p>
-
-                {step.appStoreLink && appStoreAvailable && (
-                  <a
-                    href={appLinks.appStore}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-munch-orange hover:text-munch-orange-dark"
+        <ol className="mt-10 flex flex-col gap-4">
+          {STEPS.map((step) => (
+            <li
+              key={step.number}
+              className={`overflow-hidden rounded-3xl border ${
+                step.highlight
+                  ? "border-munch-orange bg-munch-orange-soft/50"
+                  : "border-munch-border bg-munch-white"
+              }`}
+            >
+              <details open className="group">
+                <summary className="flex cursor-pointer list-none items-center gap-4 p-5 marker:content-none sm:p-6">
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-munch-orange text-base font-bold text-munch-white"
+                    aria-hidden="true"
                   >
-                    Open the App Store
-                    <ArrowRightIcon className="h-4 w-4" />
-                    <span className="sr-only">(opens in a new tab)</span>
-                  </a>
-                )}
+                    {step.number}
+                  </span>
 
-                <div
-                  className={`grid max-w-[240px] gap-2 ${
-                    step.images.length > 1 ? "grid-cols-2 max-w-[300px]" : "grid-cols-1"
-                  }`}
-                >
-                  {step.images.map((image) => {
-                    const img = (
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={720}
-                        height={1280}
-                        loading="lazy"
-                        sizes="240px"
-                        className="h-auto w-full"
-                      />
-                    );
-                    return (
-                      <div
-                        key={image.src}
-                        className="overflow-hidden rounded-xl border border-munch-border shadow-sm"
+                  <h3 className="flex-1 text-lg font-bold text-munch-black">
+                    <span className="sr-only">Step {step.number}: </span>
+                    {step.title}
+                  </h3>
+
+                  {step.highlight && (
+                    <span className="hidden items-center gap-1.5 rounded-full bg-munch-orange px-3 py-1 text-xs font-semibold text-munch-white sm:flex">
+                      <ClockIcon className="h-3.5 w-3.5" />
+                      No waiting required
+                    </span>
+                  )}
+
+                  <ChevronDownIcon
+                    className="h-5 w-5 shrink-0 text-munch-muted transition-transform duration-200 group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </summary>
+
+                <div className="flex flex-col gap-5 px-5 pb-6 sm:flex-row sm:items-start sm:px-6 sm:pb-8">
+                  <div className="flex-1">
+                    <p className="text-sm leading-relaxed text-munch-muted">
+                      {step.description}
+                    </p>
+
+                    {step.appStoreLink && appStoreAvailable && (
+                      <a
+                        href={appLinks.appStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-munch-orange hover:text-munch-orange-dark"
                       >
-                        {step.appStoreLink && appStoreAvailable ? (
-                          <a
-                            href={appLinks.appStore}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Open Munch on the App Store (opens in a new tab)"
-                          >
-                            {img}
-                          </a>
-                        ) : (
-                          img
-                        )}
-                      </div>
-                    );
-                  })}
+                        Open the App Store
+                        <ArrowRightIcon className="h-4 w-4" />
+                        <span className="sr-only">(opens in a new tab)</span>
+                      </a>
+                    )}
+                  </div>
+
+                  <div
+                    className={`grid shrink-0 gap-3 sm:w-[220px] ${
+                      step.images.length > 1 ? "grid-cols-2 sm:w-[300px]" : "grid-cols-1"
+                    }`}
+                  >
+                    {step.images.map((image) => {
+                      const img = (
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          width={720}
+                          height={1280}
+                          loading="lazy"
+                          sizes="(min-width: 640px) 220px, 60vw"
+                          className="h-auto w-full"
+                        />
+                      );
+                      return (
+                        <div
+                          key={image.src}
+                          className="overflow-hidden rounded-2xl border border-munch-border shadow-sm"
+                        >
+                          {step.appStoreLink && appStoreAvailable ? (
+                            <a
+                              href={appLinks.appStore}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="Open Munch on the App Store (opens in a new tab)"
+                            >
+                              {img}
+                            </a>
+                          ) : (
+                            img
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            </details>
-          </li>
-        ))}
-      </ol>
-    </div>
+              </details>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
   );
 }
