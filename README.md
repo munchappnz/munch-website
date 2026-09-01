@@ -39,7 +39,7 @@ before going live:
 
 - [x] Add App Store URL (`siteConfig.appStoreUrl`)
 - [ ] Add Google Play URL (`siteConfig.googlePlayUrl`)
-- [ ] Confirm production domain (`siteConfig.siteUrl`)
+- [x] Confirm production domain (`siteConfig.siteUrl`)
 - [x] Add support email (`siteConfig.supportEmail`)
 - [x] Add business support email (`siteConfig.businessEmail`)
 - [x] Add privacy email (`siteConfig.privacyEmail`)

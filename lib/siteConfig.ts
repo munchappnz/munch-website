@@ -12,7 +12,7 @@
 
 export const siteConfig = {
   /** Production domain, e.g. "https://munch.app". Used for canonical URLs, sitemap.xml and OG tags. */
-  siteUrl: "",
+  siteUrl: "https://munchapp.co.nz",
 
   /** App Store listing URL. Leave blank until the app is live — the button will show "Coming soon". */
   appStoreUrl: "https://apps.apple.com/nz/app/munch-local-food-deals/id6803275373",
