@@ -21,21 +21,12 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/business",
-    images: [
-      {
-        url: "/business-onboarding/munch-business-onboarding-poster.webp",
-        width: 720,
-        height: 1280,
-        alt: "Munch Business setup walkthrough featuring Little Fig Kitchen.",
-      },
-    ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/business-onboarding/munch-business-onboarding-poster.webp"],
   },
 };
 
