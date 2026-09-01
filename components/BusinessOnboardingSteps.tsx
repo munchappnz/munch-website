@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { littleFig, littleFigDeal } from "@/lib/littleFig";
-import { ClockIcon } from "./icons";
+import { appLinks, hasAppStoreLink } from "@/lib/appLinks";
+import { ClockIcon, ChevronDownIcon, ArrowRightIcon } from "./icons";
 
 type Step = {
   number: number;
@@ -8,6 +9,7 @@ type Step = {
   description: string;
   images: { src: string; alt: string }[];
   highlight?: boolean;
+  appStoreLink?: boolean;
 };
 
 const STEPS: Step[] = [
@@ -22,6 +24,7 @@ const STEPS: Step[] = [
         alt: "App Store listing for Munch: Local Food Deals.",
       },
     ],
+    appStoreLink: true,
   },
   {
     number: 2,
@@ -125,9 +128,11 @@ const STEPS: Step[] = [
 ];
 
 export function BusinessOnboardingSteps() {
+  const appStoreAvailable = hasAppStoreLink();
+
   return (
     <section id="onboarding-steps" className="scroll-mt-20 bg-munch-cream">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-3xl font-extrabold text-munch-black sm:text-4xl">
             Create your first recurring deal
@@ -135,65 +140,107 @@ export function BusinessOnboardingSteps() {
           <p className="mt-3 text-lg text-munch-muted">
             Follow these steps to set up your business and prepare your
             first offer. You do not need to wait for approval before
-            creating your deal.
+            creating your deal. Tap a step to open or close it.
           </p>
         </div>
 
-        <ol className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-10 flex flex-col gap-4">
           {STEPS.map((step) => (
             <li
               key={step.number}
-              className={`flex flex-col rounded-3xl border p-6 ${
+              className={`overflow-hidden rounded-3xl border ${
                 step.highlight
                   ? "border-munch-orange bg-munch-orange-soft/50"
                   : "border-munch-border bg-munch-white"
               }`}
             >
-              <div className="flex items-center gap-3">
-                <span
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-munch-orange text-sm font-bold text-munch-white"
-                  aria-hidden="true"
-                >
-                  {step.number}
-                </span>
-                {step.highlight && (
-                  <span className="flex items-center gap-1.5 rounded-full bg-munch-orange px-3 py-1 text-xs font-semibold text-munch-white">
-                    <ClockIcon className="h-3.5 w-3.5" />
-                    No waiting required
-                  </span>
-                )}
-              </div>
-
-              <h3 className="mt-4 text-lg font-bold text-munch-black">
-                <span className="sr-only">Step {step.number}: </span>
-                {step.title}
-              </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-munch-muted">
-                {step.description}
-              </p>
-
-              <div
-                className={`mt-5 grid gap-3 ${
-                  step.images.length > 1 ? "grid-cols-2" : "grid-cols-1"
-                }`}
-              >
-                {step.images.map((image) => (
-                  <div
-                    key={image.src}
-                    className="overflow-hidden rounded-2xl border border-munch-border shadow-sm"
+              <details open className="group">
+                <summary className="flex cursor-pointer list-none items-center gap-4 p-5 marker:content-none sm:p-6">
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-munch-orange text-base font-bold text-munch-white"
+                    aria-hidden="true"
                   >
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={720}
-                      height={1280}
-                      loading="lazy"
-                      sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 90vw"
-                      className="h-auto w-full"
-                    />
+                    {step.number}
+                  </span>
+
+                  <h3 className="flex-1 text-lg font-bold text-munch-black">
+                    <span className="sr-only">Step {step.number}: </span>
+                    {step.title}
+                  </h3>
+
+                  {step.highlight && (
+                    <span className="hidden items-center gap-1.5 rounded-full bg-munch-orange px-3 py-1 text-xs font-semibold text-munch-white sm:flex">
+                      <ClockIcon className="h-3.5 w-3.5" />
+                      No waiting required
+                    </span>
+                  )}
+
+                  <ChevronDownIcon
+                    className="h-5 w-5 shrink-0 text-munch-muted transition-transform duration-200 group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </summary>
+
+                <div className="flex flex-col gap-5 px-5 pb-6 sm:flex-row sm:items-start sm:px-6 sm:pb-8">
+                  <div className="flex-1">
+                    <p className="text-sm leading-relaxed text-munch-muted">
+                      {step.description}
+                    </p>
+
+                    {step.appStoreLink && appStoreAvailable && (
+                      <a
+                        href={appLinks.appStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-munch-orange hover:text-munch-orange-dark"
+                      >
+                        Open the App Store
+                        <ArrowRightIcon className="h-4 w-4" />
+                        <span className="sr-only">(opens in a new tab)</span>
+                      </a>
+                    )}
                   </div>
-                ))}
-              </div>
+
+                  <div
+                    className={`grid shrink-0 gap-3 sm:w-[220px] ${
+                      step.images.length > 1 ? "grid-cols-2 sm:w-[300px]" : "grid-cols-1"
+                    }`}
+                  >
+                    {step.images.map((image) => {
+                      const img = (
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          width={720}
+                          height={1280}
+                          loading="lazy"
+                          sizes="(min-width: 640px) 220px, 60vw"
+                          className="h-auto w-full"
+                        />
+                      );
+                      return (
+                        <div
+                          key={image.src}
+                          className="overflow-hidden rounded-2xl border border-munch-border shadow-sm"
+                        >
+                          {step.appStoreLink && appStoreAvailable ? (
+                            <a
+                              href={appLinks.appStore}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="Open Munch on the App Store (opens in a new tab)"
+                            >
+                              {img}
+                            </a>
+                          ) : (
+                            img
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </details>
             </li>
           ))}
         </ol>
