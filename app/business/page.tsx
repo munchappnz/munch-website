@@ -5,8 +5,8 @@ import { BusinessOnboardingVideo } from "@/components/BusinessOnboardingVideo";
 import { BusinessBenefits } from "@/components/BusinessBenefits";
 import { PendingReviewCallout } from "@/components/PendingReviewCallout";
 import { LiveDealPreview } from "@/components/LiveDealPreview";
-import { BusinessFAQ, BUSINESS_FAQS } from "@/components/BusinessFAQ";
 import { BusinessBooking } from "@/components/BusinessBooking";
+import { BusinessFAQ, BUSINESS_FAQS } from "@/components/BusinessFAQ";
 import { BusinessFinalCTA } from "@/components/BusinessFinalCTA";
 import { BusinessStickyCta } from "@/components/BusinessStickyCta";
 
@@ -52,13 +52,13 @@ export default function BusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <BusinessHero />
+      <BusinessBooking />
       <BusinessOnboardingSteps />
       <BusinessOnboardingVideo />
       <BusinessBenefits />
       <PendingReviewCallout />
       <LiveDealPreview />
       <BusinessFAQ />
-      <BusinessBooking />
       <BusinessFinalCTA />
       <BusinessStickyCta />
     </div>
