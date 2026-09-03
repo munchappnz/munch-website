@@ -27,13 +27,16 @@ export const siteConfig = {
   businessDeepLink: "",
 
   /** Social links. Leave blank if not supplied — the footer hides icons with no URL. */
-  instagramUrl: "https://www.instagram.com/munchapp_nz/",
+  instagramUrl: "https://www.instagram.com/getmunchapp/?hl=en",
   tiktokUrl: "",
 
   /** Support contact addresses. Leave blank if not supplied — the support page shows a placeholder. */
   supportEmail: "admin@munchapp.co.nz",
   businessEmail: "admin@munchapp.co.nz",
   privacyEmail: "admin@munchapp.co.nz",
+
+  /** Calendly link for booking a free business onboarding call. Leave blank to hide the booking section. */
+  businessBookingUrl: "https://calendly.com/thomas-munchapp/30min",
 
   /** Legal / company information for the Privacy Policy and Terms of Use. */
   legalBusinessName: "Munch",

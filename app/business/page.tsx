@@ -6,6 +6,7 @@ import { BusinessBenefits } from "@/components/BusinessBenefits";
 import { PendingReviewCallout } from "@/components/PendingReviewCallout";
 import { LiveDealPreview } from "@/components/LiveDealPreview";
 import { BusinessFAQ, BUSINESS_FAQS } from "@/components/BusinessFAQ";
+import { BusinessBooking } from "@/components/BusinessBooking";
 import { BusinessFinalCTA } from "@/components/BusinessFinalCTA";
 import { BusinessStickyCta } from "@/components/BusinessStickyCta";
 
@@ -57,6 +58,7 @@ export default function BusinessPage() {
       <PendingReviewCallout />
       <LiveDealPreview />
       <BusinessFAQ />
+      <BusinessBooking />
       <BusinessFinalCTA />
       <BusinessStickyCta />
     </div>
